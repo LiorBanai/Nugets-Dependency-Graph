@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.ServiceProcess;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Linq;
 
 namespace ProcessDependency
 {
@@ -21,8 +23,31 @@ namespace ProcessDependency
             Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
             Graph graph = new Graph("graph");
             var json = File.ReadAllText("c:\\0\\project.assets.json");
-            var dependencies = JsonConvert.DeserializeObject(json);
+            var jsonObject = JObject.Parse(json);
+            var targets = jsonObject["targets"][".NETFramework,Version=v4.8"] as IDictionary<string, JToken>;
+            if (targets == null)
+                return;
+            foreach (var target in targets)
+            {
+                var nameVersion = target.Key.ToLower();
+                Console.WriteLine(Path.Combine(nameVersion, "content", "clojure"));
 
+                var compileMap = target.Value["compile"] as IDictionary<string, JToken>;
+                if (compileMap != null)
+                {
+                    var compileFiles = compileMap.Keys.Where(k => "_._" != Path.GetFileName(k));
+                    foreach (var file in compileFiles)
+                        Console.WriteLine(Path.Combine(nameVersion, file));
+                }
+
+                var runtimeMap = target.Value["runtime"] as IDictionary<string, JToken>;
+                if (runtimeMap != null)
+                {
+                    var runtimeFiles = runtimeMap.Keys.Where(k => "_._" != Path.GetFileName(k));
+                    foreach (var file in runtimeFiles)
+                        Console.WriteLine(Path.Combine(nameVersion, file));
+                }
+            }
             foreach (ServiceController serviceController in ServiceController.GetServices())
             {
                 var service = $"{serviceController.DisplayName} ({serviceController.ServiceName})";
