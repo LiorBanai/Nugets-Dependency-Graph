@@ -29,36 +29,32 @@ namespace ProcessDependency
                 return;
             foreach (var target in targets)
             {
-                var nameVersion = target.Key.ToLower();
-                Console.WriteLine(Path.Combine(nameVersion, "content", "clojure"));
-
-                var compileMap = target.Value["compile"] as IDictionary<string, JToken>;
-                if (compileMap != null)
+                var nameVersion = target.Key.ToLower().Replace("/", ": ");
+                graph.AddNode(nameVersion);
+                var deps = target.Value["dependencies"] as IDictionary<string, JToken>;
+                if (deps is null)
                 {
-                    var compileFiles = compileMap.Keys.Where(k => "_._" != Path.GetFileName(k));
-                    foreach (var file in compileFiles)
-                        Console.WriteLine(Path.Combine(nameVersion, file));
+                    continue;
                 }
-
-                var runtimeMap = target.Value["runtime"] as IDictionary<string, JToken>;
-                if (runtimeMap != null)
+                foreach (var dep in deps)
                 {
-                    var runtimeFiles = runtimeMap.Keys.Where(k => "_._" != Path.GetFileName(k));
-                    foreach (var file in runtimeFiles)
-                        Console.WriteLine(Path.Combine(nameVersion, file));
-                }
-            }
-            foreach (ServiceController serviceController in ServiceController.GetServices())
-            {
-                var service = $"{serviceController.DisplayName} ({serviceController.ServiceName})";
-                graph.AddNode(service);
-                foreach (var dependentService in serviceController.DependentServices)
-                {
-                    string dependent = $"{dependentService.DisplayName} ({dependentService.ServiceName})";
+                    var dependent = dep.Key.ToLower() + ": " + (dep.Value as Newtonsoft.Json.Linq.JValue).Value;
                     graph.AddNode(dependent);
-                    graph.AddEdge(dependent, service);
+                    graph.AddEdge(dependent, nameVersion);
                 }
             }
+
+            //foreach (ServiceController serviceController in ServiceController.GetServices())
+            //{
+            //    var service = $"{serviceController.DisplayName} ({serviceController.ServiceName})";
+            //    graph.AddNode(service);
+            //    foreach (var dependentService in serviceController.DependentServices)
+            //    {
+            //        string dependent = $"{dependentService.DisplayName} ({dependentService.ServiceName})";
+            //        graph.AddNode(dependent);
+            //        graph.AddEdge(dependent, service);
+            //    }
+            //}
             //bind the graph to the viewer 
             graph.Attr.LayerDirection = LayerDirection.None;
             graph.Attr.OptimizeLabelPositions = true;

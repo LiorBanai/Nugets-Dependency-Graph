@@ -28,13 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            panel1 = new System.Windows.Forms.Panel();
+            panel2 = new System.Windows.Forms.Panel();
             SuspendLayout();
+            // 
+            // panel1
+            // 
+            panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            panel1.Location = new System.Drawing.Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(742, 102);
+            panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            panel2.Location = new System.Drawing.Point(0, 102);
+            panel2.Name = "panel2";
+            panel2.Size = new System.Drawing.Size(742, 412);
+            panel2.TabIndex = 1;
             // 
             // Form
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(742, 514);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             Name = "Form";
             Text = "Nuget Dependencies";
@@ -43,6 +63,9 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 
