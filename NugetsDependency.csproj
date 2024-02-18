@@ -2,8 +2,8 @@
   <PropertyGroup>
     <TargetFramework>net8.0-windows</TargetFramework>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ProcessDependency</RootNamespace>
-    <AssemblyName>ProcessDependency</AssemblyName>
+    <RootNamespace>NugetDependency</RootNamespace>
+    <AssemblyName>NugetDependency</AssemblyName>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
@@ -15,6 +15,5 @@
     <PackageReference Include="Microsoft.Msagl.GraphViewerGDI" Version="1.1.7" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
-    <PackageReference Include="System.ServiceProcess.ServiceController" Version="8.0.0" />
   </ItemGroup>
 </Project>

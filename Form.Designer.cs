@@ -37,11 +37,13 @@
             BtnSelect = new System.Windows.Forms.Button();
             textBox1 = new System.Windows.Forms.TextBox();
             panel2 = new System.Windows.Forms.Panel();
+            label3 = new System.Windows.Forms.Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(textBox3);
             panel1.Controls.Add(label1);
@@ -67,9 +69,9 @@
             // textBox3
             // 
             textBox3.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            textBox3.Location = new System.Drawing.Point(123, 70);
+            textBox3.Location = new System.Drawing.Point(174, 70);
             textBox3.Name = "textBox3";
-            textBox3.Size = new System.Drawing.Size(533, 27);
+            textBox3.Size = new System.Drawing.Size(482, 27);
             textBox3.TabIndex = 5;
             textBox3.Text = ".NETFramework,Version=v4.8  Or net8.0-windows7.0";
             // 
@@ -96,9 +98,9 @@
             // textBox2
             // 
             textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            textBox2.Location = new System.Drawing.Point(122, 38);
+            textBox2.Location = new System.Drawing.Point(173, 38);
             textBox2.Name = "textBox2";
-            textBox2.Size = new System.Drawing.Size(533, 27);
+            textBox2.Size = new System.Drawing.Size(482, 27);
             textBox2.TabIndex = 2;
             // 
             // BtnSelect
@@ -115,9 +117,9 @@
             // textBox1
             // 
             textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            textBox1.Location = new System.Drawing.Point(6, 8);
+            textBox1.Location = new System.Drawing.Point(174, 8);
             textBox1.Name = "textBox1";
-            textBox1.Size = new System.Drawing.Size(649, 27);
+            textBox1.Size = new System.Drawing.Size(481, 27);
             textBox1.TabIndex = 0;
             // 
             // panel2
@@ -127,6 +129,15 @@
             panel2.Name = "panel2";
             panel2.Size = new System.Drawing.Size(742, 412);
             panel2.TabIndex = 1;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(12, 11);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(156, 20);
+            label3.TabIndex = 7;
+            label3.Text = "project.assets.json file:";
             // 
             // Form
             // 
@@ -156,6 +167,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label3;
     }
 }
 
