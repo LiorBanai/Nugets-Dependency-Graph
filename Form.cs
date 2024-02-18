@@ -61,7 +61,15 @@ namespace ProcessDependency
             foreach (var target in targets)
             {
                 var nameVersion = target.Key.ToLower().Replace("/", ": ");
-                graph.AddNode(nameVersion);
+                if (string.IsNullOrEmpty(textBox4.Text))
+                {
+                    graph.AddNode(nameVersion);
+                }
+                else if (nameVersion.StartsWith(textBox4.Text.ToLower()))
+                {
+                  var node=  graph.AddNode(nameVersion);
+                  node.Label.FontColor = Color.Green;
+                }
                 var deps = target.Value["dependencies"] as IDictionary<string, JToken>;
                 if (deps is null)
                 {
@@ -82,6 +90,7 @@ namespace ProcessDependency
             viewer.Graph = graph;
             SuspendLayout();
             viewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            panel2.Controls.Clear();
             panel2.Controls.Add(viewer);
             ResumeLayout();
 

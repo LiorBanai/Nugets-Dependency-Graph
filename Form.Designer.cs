@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new System.Windows.Forms.Panel();
+            label3 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             textBox3 = new System.Windows.Forms.TextBox();
             label1 = new System.Windows.Forms.Label();
@@ -37,12 +38,15 @@
             BtnSelect = new System.Windows.Forms.Button();
             textBox1 = new System.Windows.Forms.TextBox();
             panel2 = new System.Windows.Forms.Panel();
-            label3 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            textBox4 = new System.Windows.Forms.TextBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(textBox4);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(textBox3);
@@ -54,8 +58,17 @@
             panel1.Dock = System.Windows.Forms.DockStyle.Top;
             panel1.Location = new System.Drawing.Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(742, 102);
+            panel1.Size = new System.Drawing.Size(742, 143);
             panel1.TabIndex = 0;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(12, 11);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(156, 20);
+            label3.TabIndex = 7;
+            label3.Text = "project.assets.json file:";
             // 
             // label2
             // 
@@ -87,7 +100,7 @@
             // btnRun
             // 
             btnRun.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            btnRun.Location = new System.Drawing.Point(663, 36);
+            btnRun.Location = new System.Drawing.Point(663, 103);
             btnRun.Name = "btnRun";
             btnRun.Size = new System.Drawing.Size(73, 30);
             btnRun.TabIndex = 3;
@@ -125,19 +138,27 @@
             // panel2
             // 
             panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel2.Location = new System.Drawing.Point(0, 102);
+            panel2.Location = new System.Drawing.Point(0, 143);
             panel2.Name = "panel2";
-            panel2.Size = new System.Drawing.Size(742, 412);
+            panel2.Size = new System.Drawing.Size(742, 371);
             panel2.TabIndex = 1;
             // 
-            // label3
+            // label4
             // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(12, 11);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(156, 20);
-            label3.TabIndex = 7;
-            label3.Text = "project.assets.json file:";
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(11, 108);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(159, 20);
+            label4.TabIndex = 9;
+            label4.Text = "Limit to Single project:";
+            // 
+            // textBox4
+            // 
+            textBox4.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            textBox4.Location = new System.Drawing.Point(249, 103);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new System.Drawing.Size(406, 27);
+            textBox4.TabIndex = 8;
             // 
             // Form
             // 
@@ -168,6 +189,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }
 
