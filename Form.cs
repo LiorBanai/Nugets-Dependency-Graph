@@ -57,18 +57,29 @@ namespace ProcessDependency
             var jsonObject = JObject.Parse(json);
             var targets = jsonObject["targets"][textBox2.Text] as IDictionary<string, JToken>;
             if (targets == null)
+            {
+                MessageBox.Show("Target does not exists");
                 return;
+            }
             foreach (var target in targets)
             {
                 var nameVersion = target.Key.ToLower().Replace("/", ": ");
+                Node node = null;
                 if (string.IsNullOrEmpty(textBox4.Text))
                 {
-                    graph.AddNode(nameVersion);
+                    node = graph.AddNode(nameVersion);
                 }
                 else if (nameVersion.StartsWith(textBox4.Text.ToLower()))
                 {
-                  var node=  graph.AddNode(nameVersion);
-                  node.Label.FontColor = Color.Green;
+                    node = graph.AddNode(nameVersion);
+                    node.Label.FontColor = Color.Green;
+                    node.Label.FontSize += 2;
+                }
+
+                if (nameVersion.StartsWith(tbColor.Text.ToLower()) && node is not null)
+                {
+                    node.Label.FontColor = Color.DarkRed;
+                    node.Label.FontSize += 2;
                 }
                 var deps = target.Value["dependencies"] as IDictionary<string, JToken>;
                 if (deps is null)
@@ -79,7 +90,7 @@ namespace ProcessDependency
                 {
                     var dependent = dep.Key.ToLower() + ": " + (dep.Value as Newtonsoft.Json.Linq.JValue).Value;
                     graph.AddNode(dependent);
-                    graph.AddEdge( nameVersion, dependent);
+                    graph.AddEdge(nameVersion, dependent);
                 }
             }
             //bind the graph to the viewer 
