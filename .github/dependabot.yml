@@ -5,3 +5,7 @@ updates:
   schedule:
     interval: daily
   open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: System.Resources.Extensions
+    versions:
+    - ">= 4.7.a, < 4.8"
