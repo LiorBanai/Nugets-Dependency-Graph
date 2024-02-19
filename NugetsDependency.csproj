@@ -1,12 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>net8.0-windows</TargetFramework>
+		<TargetFrameworks>net8.0-windows</TargetFrameworks>
 		<OutputType>WinExe</OutputType>
 		<RootNamespace>NugetDependency</RootNamespace>
 		<AssemblyName>NugetDependency</AssemblyName>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<UseWindowsForms>true</UseWindowsForms>
-		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
 		<VersionPrefix>1.0.0</VersionPrefix>
 		<VersionSuffix></VersionSuffix>
 	</PropertyGroup>
