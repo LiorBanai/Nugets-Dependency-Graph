@@ -11,3 +11,6 @@
 /ServiceDependency.csproj.user
 /bin
 /NugetsDependency.csproj.user
+/src/obj/Debug/net8.0-windows
+/src/bin/Debug/net8.0-windows
+/src/obj
