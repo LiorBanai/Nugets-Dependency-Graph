@@ -64,6 +64,11 @@ namespace ProcessDependency
             foreach (var target in targets)
             {
                 var nameVersion = target.Key.ToLower().Replace("/", ": ");
+                if (!string.IsNullOrEmpty(txtDependenciesName.Text) && !nameVersion.Contains(txtDependenciesName.Text,
+                        StringComparison.InvariantCultureIgnoreCase))
+                {
+                    continue;
+                }
                 Node node = null;
                 if (string.IsNullOrEmpty(textBox4.Text))
                 {
@@ -73,24 +78,29 @@ namespace ProcessDependency
                 {
                     node = graph.AddNode(nameVersion);
                     node.Label.FontColor = Color.Green;
-                    node.Label.FontSize += 2;
+                    node.Label.FontSize += 10;
                 }
 
-                if (nameVersion.StartsWith(tbColor.Text.ToLower()) && node is not null)
+                if (!string.IsNullOrEmpty(tbColor.Text) && nameVersion.StartsWith(tbColor.Text.ToLower()) && node is not null)
                 {
                     node.Label.FontColor = Color.DarkRed;
-                    node.Label.FontSize += 2;
+                    node.Label.FontSize += 5;
                 }
                 var deps = target.Value["dependencies"] as IDictionary<string, JToken>;
-                if (deps is null)
+                if (deps is null || node is null)
                 {
                     continue;
                 }
                 foreach (var dep in deps)
                 {
                     var dependent = dep.Key.ToLower() + ": " + (dep.Value as Newtonsoft.Json.Linq.JValue).Value;
+                    if (!string.IsNullOrEmpty(txtDependenciesName.Text) && !dependent.Contains(txtDependenciesName.Text, StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        continue;
+                    }
                     graph.AddNode(dependent);
-                    graph.AddEdge(nameVersion, dependent);
+                    var edge = graph.AddEdge(nameVersion, dependent);
+                    edge.Attr.ArrowheadLength = 10;
                 }
             }
             //bind the graph to the viewer 

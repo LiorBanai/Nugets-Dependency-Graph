@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new System.Windows.Forms.Panel();
+            label5 = new System.Windows.Forms.Label();
+            tbColor = new System.Windows.Forms.TextBox();
             label4 = new System.Windows.Forms.Label();
             textBox4 = new System.Windows.Forms.TextBox();
             label3 = new System.Windows.Forms.Label();
@@ -40,13 +42,15 @@
             BtnSelect = new System.Windows.Forms.Button();
             textBox1 = new System.Windows.Forms.TextBox();
             panel2 = new System.Windows.Forms.Panel();
-            label5 = new System.Windows.Forms.Label();
-            tbColor = new System.Windows.Forms.TextBox();
+            label6 = new System.Windows.Forms.Label();
+            txtDependenciesName = new System.Windows.Forms.TextBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(txtDependenciesName);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(tbColor);
             panel1.Controls.Add(label4);
@@ -62,8 +66,25 @@
             panel1.Dock = System.Windows.Forms.DockStyle.Top;
             panel1.Location = new System.Drawing.Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(742, 183);
+            panel1.Size = new System.Drawing.Size(742, 205);
             panel1.TabIndex = 0;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(12, 173);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(135, 20);
+            label5.TabIndex = 11;
+            label5.Text = "Color Dependency:";
+            // 
+            // tbColor
+            // 
+            tbColor.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            tbColor.Location = new System.Drawing.Point(250, 168);
+            tbColor.Name = "tbColor";
+            tbColor.Size = new System.Drawing.Size(406, 27);
+            tbColor.TabIndex = 10;
             // 
             // label4
             // 
@@ -159,27 +180,27 @@
             // panel2
             // 
             panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel2.Location = new System.Drawing.Point(0, 183);
+            panel2.Location = new System.Drawing.Point(0, 205);
             panel2.Name = "panel2";
-            panel2.Size = new System.Drawing.Size(742, 331);
+            panel2.Size = new System.Drawing.Size(742, 309);
             panel2.TabIndex = 1;
             // 
-            // label5
+            // label6
             // 
-            label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(12, 141);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(135, 20);
-            label5.TabIndex = 11;
-            label5.Text = "Color Dependency:";
+            label6.AutoSize = true;
+            label6.Location = new System.Drawing.Point(12, 140);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(129, 20);
+            label6.TabIndex = 13;
+            label6.Text = "Show Only names:";
             // 
-            // tbColor
+            // txtDependenciesName
             // 
-            tbColor.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            tbColor.Location = new System.Drawing.Point(250, 136);
-            tbColor.Name = "tbColor";
-            tbColor.Size = new System.Drawing.Size(406, 27);
-            tbColor.TabIndex = 10;
+            txtDependenciesName.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txtDependenciesName.Location = new System.Drawing.Point(250, 135);
+            txtDependenciesName.Name = "txtDependenciesName";
+            txtDependenciesName.Size = new System.Drawing.Size(406, 27);
+            txtDependenciesName.TabIndex = 12;
             // 
             // Form
             // 
@@ -214,6 +235,8 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tbColor;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtDependenciesName;
     }
 }
 
