@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<PackAsTool>true</PackAsTool>
+		<ToolCommandName>NugetsDependencyGraph</ToolCommandName>
+		<PackageOutputPath>./nupkg</PackageOutputPath>		
+		<TargetFrameworks>net8.0-windows</TargetFrameworks>
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<RootNamespace>NugetsDependencyGraph.CLI</RootNamespace>
+		<AssemblyName>NugetsDependencyGraph.CLI</AssemblyName>
+		<PackageId>NugetsDependencyGraph.CLI</PackageId>
+		<Product>NugetsDependencyGraph</Product>
+		<VersionPrefix>0.0.1.0</VersionPrefix>
+		<VersionSuffix></VersionSuffix>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<Description>cli tool fror creating nuget dependency graph</Description>
+		<PackageReleaseNotes></PackageReleaseNotes>
+		<PackageProjectUrl>https://github.com/LiorBanai/Nugets-Dependency-Graph</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/LiorBanai/Nugets-Dependency-Graph</RepositoryUrl>
+		<Authors>Lior Banai</Authors>
+		<Copyright>Lior Banai @ 2024</Copyright>
+		<UseWindowsForms>true</UseWindowsForms>		
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+		<PackageReference Include="Microsoft.Msagl" Version="1.1.6" />
+		<PackageReference Include="Microsoft.Msagl.Drawing" Version="1.1.6" />
+		<PackageReference Include="Microsoft.Msagl.GraphViewerGDI" Version="1.1.7" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="System.Drawing.Common" Version="8.0.7" />
+	</ItemGroup>
+</Project>
