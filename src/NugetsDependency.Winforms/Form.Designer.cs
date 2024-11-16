@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new System.Windows.Forms.Panel();
+            label6 = new System.Windows.Forms.Label();
+            txtDependenciesName = new System.Windows.Forms.TextBox();
             label5 = new System.Windows.Forms.Label();
             tbColor = new System.Windows.Forms.TextBox();
             label4 = new System.Windows.Forms.Label();
@@ -42,8 +44,6 @@
             BtnSelect = new System.Windows.Forms.Button();
             textBox1 = new System.Windows.Forms.TextBox();
             panel2 = new System.Windows.Forms.Panel();
-            label6 = new System.Windows.Forms.Label();
-            txtDependenciesName = new System.Windows.Forms.TextBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -68,6 +68,23 @@
             panel1.Name = "panel1";
             panel1.Size = new System.Drawing.Size(742, 205);
             panel1.TabIndex = 0;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new System.Drawing.Point(12, 140);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(129, 20);
+            label6.TabIndex = 13;
+            label6.Text = "Show Only names:";
+            // 
+            // txtDependenciesName
+            // 
+            txtDependenciesName.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txtDependenciesName.Location = new System.Drawing.Point(250, 135);
+            txtDependenciesName.Name = "txtDependenciesName";
+            txtDependenciesName.Size = new System.Drawing.Size(406, 27);
+            txtDependenciesName.TabIndex = 12;
             // 
             // label5
             // 
@@ -157,6 +174,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new System.Drawing.Size(482, 27);
             textBox2.TabIndex = 2;
+            textBox2.Text = "net8.0-windows7.0";
             // 
             // BtnSelect
             // 
@@ -184,23 +202,6 @@
             panel2.Name = "panel2";
             panel2.Size = new System.Drawing.Size(742, 309);
             panel2.TabIndex = 1;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(12, 140);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(129, 20);
-            label6.TabIndex = 13;
-            label6.Text = "Show Only names:";
-            // 
-            // txtDependenciesName
-            // 
-            txtDependenciesName.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            txtDependenciesName.Location = new System.Drawing.Point(250, 135);
-            txtDependenciesName.Name = "txtDependenciesName";
-            txtDependenciesName.Size = new System.Drawing.Size(406, 27);
-            txtDependenciesName.TabIndex = 12;
             // 
             // Form
             // 

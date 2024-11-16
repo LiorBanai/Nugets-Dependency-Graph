@@ -5,7 +5,7 @@
 		<PackAsTool>true</PackAsTool>
 		<ToolCommandName>NugetsDependencyGraph</ToolCommandName>
 		<PackageOutputPath>./nupkg</PackageOutputPath>		
-		<TargetFrameworks>net8.0-windows</TargetFrameworks>
+		<TargetFrameworks>net9.0-windows</TargetFrameworks>
 		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
@@ -30,6 +30,6 @@
 		<PackageReference Include="Microsoft.Msagl.Drawing" Version="1.1.6" />
 		<PackageReference Include="Microsoft.Msagl.GraphViewerGDI" Version="1.1.7" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-		<PackageReference Include="System.Drawing.Common" Version="8.0.10" />
+		<PackageReference Include="System.Drawing.Common" Version="9.0.0" />
 	</ItemGroup>
 </Project>
