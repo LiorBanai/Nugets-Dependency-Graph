@@ -1,4 +1,4 @@
-﻿namespace ProcessDependency
+﻿namespace NugetDependency
 {
     partial class Form
     {

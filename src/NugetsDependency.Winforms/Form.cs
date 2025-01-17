@@ -1,15 +1,12 @@
-﻿using Microsoft.Msagl.Drawing;
-using Microsoft.Msagl.Layout.MDS;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.ServiceProcess;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Linq;
 using System.Windows.Forms;
+using Microsoft.Msagl.Drawing;
+using Microsoft.Msagl.Layout.MDS;
+using Newtonsoft.Json.Linq;
 
-namespace ProcessDependency
+namespace NugetDependency
 {
     public partial class Form : System.Windows.Forms.Form
     {
