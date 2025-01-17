@@ -82,7 +82,7 @@ namespace NugetsDependencyGraph.CLI
             graph.Attr.OptimizeLabelPositions = true;
             graph.CreateLayoutSettings();
             graph.LayoutAlgorithmSettings = new MdsLayoutSettings();
-            string outputFileName = Path.Join(outputFolder, "NugetDependencyGraphOutput.graph");
+            string outputFileName = Path.Join(outputFolder, "NugetDependencyGraphOutput");
             graph.Write(outputFileName);
         }
     }
