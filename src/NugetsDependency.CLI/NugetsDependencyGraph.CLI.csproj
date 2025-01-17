@@ -9,6 +9,11 @@
 		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<!--<PackageReadmeFile>README.md</PackageReadmeFile>-->
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
 		<RootNamespace>NugetsDependencyGraph.CLI</RootNamespace>
 		<AssemblyName>NugetsDependencyGraph.CLI</AssemblyName>
 		<PackageId>NugetsDependencyGraph.CLI</PackageId>
