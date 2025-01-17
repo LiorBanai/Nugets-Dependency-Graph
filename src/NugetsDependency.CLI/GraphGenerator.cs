@@ -28,8 +28,6 @@ namespace NugetsDependencyGraph.CLI
             }
             Graph graph = new Graph("graph");
             var json = File.ReadAllText(FileName);
-
-
             var jsonObject = JObject.Parse(json);
             var targets = jsonObject["targets"][targetFrameworks] as IDictionary<string, JToken>;
             if (targets == null)
@@ -84,15 +82,8 @@ namespace NugetsDependencyGraph.CLI
             graph.Attr.OptimizeLabelPositions = true;
             graph.CreateLayoutSettings();
             graph.LayoutAlgorithmSettings = new MdsLayoutSettings();
-
-            var renderer = new Microsoft.Msagl.GraphViewerGdi.GraphRenderer(graph);
-            renderer.CalculateLayout();
-
-            var image = new Bitmap((int)(graph.Width * 2), (int)(graph.Height * 2));
-            renderer.Render(image);
-            string outputFileName = Path.Join(outputFolder, "NugetDependencyGraphOutput.png");
-            image.Save(outputFileName, System.Drawing.Imaging.ImageFormat.Png);
-            image.Dispose();
+            string outputFileName = Path.Join(outputFolder, "NugetDependencyGraphOutput.graph");
+            graph.Write(outputFileName);
         }
     }
 }
