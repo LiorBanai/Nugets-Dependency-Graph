@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new System.Windows.Forms.Panel();
+            btnOpenGraph = new System.Windows.Forms.Button();
             label6 = new System.Windows.Forms.Label();
             txtDependenciesName = new System.Windows.Forms.TextBox();
             label5 = new System.Windows.Forms.Label();
@@ -49,6 +50,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(btnOpenGraph);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(txtDependenciesName);
             panel1.Controls.Add(label5);
@@ -66,13 +68,23 @@
             panel1.Dock = System.Windows.Forms.DockStyle.Top;
             panel1.Location = new System.Drawing.Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(742, 205);
+            panel1.Size = new System.Drawing.Size(1198, 242);
             panel1.TabIndex = 0;
+            // 
+            // btnOpenGraph
+            // 
+            btnOpenGraph.Location = new System.Drawing.Point(14, 3);
+            btnOpenGraph.Name = "btnOpenGraph";
+            btnOpenGraph.Size = new System.Drawing.Size(235, 30);
+            btnOpenGraph.TabIndex = 14;
+            btnOpenGraph.Text = "Generate from existing file";
+            btnOpenGraph.UseVisualStyleBackColor = true;
+            btnOpenGraph.Click += btnOpenGraph_Click;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(12, 140);
+            label6.Location = new System.Drawing.Point(9, 174);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(129, 20);
             label6.TabIndex = 13;
@@ -81,15 +93,15 @@
             // txtDependenciesName
             // 
             txtDependenciesName.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            txtDependenciesName.Location = new System.Drawing.Point(250, 135);
+            txtDependenciesName.Location = new System.Drawing.Point(247, 169);
             txtDependenciesName.Name = "txtDependenciesName";
-            txtDependenciesName.Size = new System.Drawing.Size(406, 27);
+            txtDependenciesName.Size = new System.Drawing.Size(862, 27);
             txtDependenciesName.TabIndex = 12;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(12, 173);
+            label5.Location = new System.Drawing.Point(9, 207);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(135, 20);
             label5.TabIndex = 11;
@@ -98,15 +110,15 @@
             // tbColor
             // 
             tbColor.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            tbColor.Location = new System.Drawing.Point(250, 168);
+            tbColor.Location = new System.Drawing.Point(247, 202);
             tbColor.Name = "tbColor";
-            tbColor.Size = new System.Drawing.Size(406, 27);
+            tbColor.Size = new System.Drawing.Size(862, 27);
             tbColor.TabIndex = 10;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(11, 108);
+            label4.Location = new System.Drawing.Point(8, 142);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(159, 20);
             label4.TabIndex = 9;
@@ -115,15 +127,15 @@
             // textBox4
             // 
             textBox4.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            textBox4.Location = new System.Drawing.Point(249, 103);
+            textBox4.Location = new System.Drawing.Point(246, 137);
             textBox4.Name = "textBox4";
-            textBox4.Size = new System.Drawing.Size(406, 27);
+            textBox4.Size = new System.Drawing.Size(862, 27);
             textBox4.TabIndex = 8;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(12, 11);
+            label3.Location = new System.Drawing.Point(9, 45);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(156, 20);
             label3.TabIndex = 7;
@@ -132,7 +144,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(12, 75);
+            label2.Location = new System.Drawing.Point(9, 109);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(69, 20);
             label2.TabIndex = 6;
@@ -141,16 +153,16 @@
             // textBox3
             // 
             textBox3.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            textBox3.Location = new System.Drawing.Point(174, 70);
+            textBox3.Location = new System.Drawing.Point(171, 104);
             textBox3.Name = "textBox3";
-            textBox3.Size = new System.Drawing.Size(482, 27);
+            textBox3.Size = new System.Drawing.Size(938, 27);
             textBox3.TabIndex = 5;
             textBox3.Text = ".NETFramework,Version=v4.8  Or net8.0-windows7.0";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(11, 43);
+            label1.Location = new System.Drawing.Point(8, 77);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(82, 20);
             label1.TabIndex = 4;
@@ -159,7 +171,7 @@
             // btnRun
             // 
             btnRun.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            btnRun.Location = new System.Drawing.Point(663, 103);
+            btnRun.Location = new System.Drawing.Point(1116, 137);
             btnRun.Name = "btnRun";
             btnRun.Size = new System.Drawing.Size(73, 30);
             btnRun.TabIndex = 3;
@@ -170,16 +182,16 @@
             // textBox2
             // 
             textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            textBox2.Location = new System.Drawing.Point(173, 38);
+            textBox2.Location = new System.Drawing.Point(170, 72);
             textBox2.Name = "textBox2";
-            textBox2.Size = new System.Drawing.Size(482, 27);
+            textBox2.Size = new System.Drawing.Size(938, 27);
             textBox2.TabIndex = 2;
             textBox2.Text = "net8.0-windows7.0";
             // 
             // BtnSelect
             // 
             BtnSelect.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-            BtnSelect.Location = new System.Drawing.Point(663, 6);
+            BtnSelect.Location = new System.Drawing.Point(1116, 40);
             BtnSelect.Name = "BtnSelect";
             BtnSelect.Size = new System.Drawing.Size(73, 30);
             BtnSelect.TabIndex = 1;
@@ -190,24 +202,24 @@
             // textBox1
             // 
             textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            textBox1.Location = new System.Drawing.Point(174, 8);
+            textBox1.Location = new System.Drawing.Point(171, 42);
             textBox1.Name = "textBox1";
-            textBox1.Size = new System.Drawing.Size(481, 27);
+            textBox1.Size = new System.Drawing.Size(937, 27);
             textBox1.TabIndex = 0;
             // 
             // panel2
             // 
             panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel2.Location = new System.Drawing.Point(0, 205);
+            panel2.Location = new System.Drawing.Point(0, 242);
             panel2.Name = "panel2";
-            panel2.Size = new System.Drawing.Size(742, 309);
+            panel2.Size = new System.Drawing.Size(1198, 272);
             panel2.TabIndex = 1;
             // 
             // Form
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(742, 514);
+            ClientSize = new System.Drawing.Size(1198, 514);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -238,6 +250,7 @@
         private System.Windows.Forms.TextBox tbColor;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtDependenciesName;
+        private System.Windows.Forms.Button btnOpenGraph;
     }
 }
 

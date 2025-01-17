@@ -116,5 +116,36 @@ namespace ProcessDependency
             ResumeLayout();
 
         }
+
+        private void btnOpenGraph_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog
+            {
+                CheckFileExists = true,
+                CheckPathExists = true,
+                DefaultExt = "Graph file msagl",
+                Filter = "Graph file (*.msagl)|*.msagl",
+                FilterIndex = 1,
+                RestoreDirectory = true,
+                ReadOnlyChecked = true,
+                ShowReadOnly = true
+            };
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Microsoft.Msagl.GraphViewerGdi.GViewer viewer = new Microsoft.Msagl.GraphViewerGdi.GViewer();
+                Graph graph = Graph.Read(openFileDialog1.FileName);
+                //bind the graph to the viewer 
+                graph.Attr.LayerDirection = LayerDirection.None;
+                graph.Attr.OptimizeLabelPositions = true;
+                graph.CreateLayoutSettings();
+                graph.LayoutAlgorithmSettings = new MdsLayoutSettings();
+                viewer.Graph = graph;
+                SuspendLayout();
+                viewer.Dock = System.Windows.Forms.DockStyle.Fill;
+                panel2.Controls.Clear();
+                panel2.Controls.Add(viewer);
+                ResumeLayout();
+            }
+        }
     }
 }

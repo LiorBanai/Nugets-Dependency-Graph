@@ -16,7 +16,7 @@
 		<VersionPrefix>0.0.1.0</VersionPrefix>
 		<VersionSuffix></VersionSuffix>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-		<Description>cli tool fror creating nuget dependency graph</Description>
+		<Description>cli tool creating nuget dependency graph</Description>
 		<PackageReleaseNotes></PackageReleaseNotes>
 		<PackageProjectUrl>https://github.com/LiorBanai/Nugets-Dependency-Graph</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/LiorBanai/Nugets-Dependency-Graph</RepositoryUrl>
