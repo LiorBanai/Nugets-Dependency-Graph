@@ -4,16 +4,17 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("generating graph");
             if (args.Length is not 2)
             {
-                Console.WriteLine("invalid parameters count. expected: filename and framework");
+                Console.WriteLine("invalid parameters count. expected: directory of obj folder with project.assets.json and framework");
                 return;
             }
-            var filename =args[0];
+            Console.WriteLine("generating graph");
+            var filename = Path.Join(args[0], "project.assets.json");
             var targetFramework = args[1];//"net8.0-windows7.0";
             GraphGenerator graph = new GraphGenerator(filename);
-            graph.Generate(targetFramework,"","","",Environment.CurrentDirectory);
+            var directory = args[0];
+            graph.Generate(targetFramework, "", "", "", directory);
         }
     }
 }
