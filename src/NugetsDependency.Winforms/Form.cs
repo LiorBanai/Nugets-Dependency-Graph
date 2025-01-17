@@ -139,8 +139,8 @@ namespace NugetDependency
                 viewer.Graph = graph;
                 SuspendLayout();
                 viewer.Dock = System.Windows.Forms.DockStyle.Fill;
-                panel2.Controls.Clear();
-                panel2.Controls.Add(viewer);
+                pnlLoadExisting.Controls.Clear();
+                pnlLoadExisting.Controls.Add(viewer);
                 ResumeLayout();
             }
         }
