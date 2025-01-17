@@ -4,7 +4,7 @@
 		<OutputType>Exe</OutputType>
 		<PackAsTool>true</PackAsTool>
 		<ToolCommandName>NugetsDependencyGraph</ToolCommandName>
-		<PackageOutputPath>./nupkg</PackageOutputPath>		
+		<!--<PackageOutputPath>./nupkg</PackageOutputPath>-->		
 		<TargetFrameworks>net9.0</TargetFrameworks>
 		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
 		<ImplicitUsings>enable</ImplicitUsings>

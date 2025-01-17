@@ -51,7 +51,7 @@ jobs:
       uses: actions/upload-artifact@v4.4.3
       with:
         name: artifactory_${{ matrix.configuration }}
-        path: ./src/NugetsDependency.CLI/nupkg
+        path: ./src/NugetsDependency.CLI/bin/${{ matrix.configuration }}
   push-nuget:
     name: 'Push NuGet Packages'
     needs: build
