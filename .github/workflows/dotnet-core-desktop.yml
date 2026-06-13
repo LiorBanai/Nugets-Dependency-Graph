@@ -48,7 +48,7 @@ jobs:
         Configuration: ${{ matrix.configuration }}
     # Publish Artifacts 
     - name: 'Publish Artifacts'   
-      uses: actions/upload-artifact@v4.4.3
+      uses: actions/upload-artifact@v7.0.1
       with:
         name: artifactory_${{ matrix.configuration }}
         path: ./src/NugetsDependency.CLI/bin/${{ matrix.configuration }}
