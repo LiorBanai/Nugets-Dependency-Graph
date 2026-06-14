@@ -46,12 +46,16 @@ jobs:
       run: msbuild $env:Solution_Name /t:Rebuild /p:Configuration=$env:Configuration
       env:
         Configuration: ${{ matrix.configuration }}
+    - name: Pack CLI NuGet
+      run: dotnet pack ./src/NugetsDependency.CLI/NugetsDependencyGraph.CLI.csproj -c $env:Configuration --no-build -o ./artifacts/nuget
+      env:
+        Configuration: ${{ matrix.configuration }}
     # Publish Artifacts 
     - name: 'Publish Artifacts'   
       uses: actions/upload-artifact@v7.0.1
       with:
         name: artifactory_${{ matrix.configuration }}
-        path: ./src/NugetsDependency.CLI/bin
+        path: ./artifacts/nuget
   push-nuget:
     name: 'Push NuGet Packages'
     needs: build
@@ -64,7 +68,7 @@ jobs:
           name: artifactory_Release
       - name: 'Dotnet NuGet Push'
         run: |
-          Get-ChildItem ./ -Filter *.nupkg |
+          Get-ChildItem ./ -Recurse -Filter *.nupkg |
           Where-Object { !$_.Name.Contains('preview') } |
           ForEach-Object { dotnet nuget push $_ --source https://api.nuget.org/v3/index.json --skip-duplicate --api-key ${{secrets.NUGET_API_KEY}} }
         shell: pwsh
