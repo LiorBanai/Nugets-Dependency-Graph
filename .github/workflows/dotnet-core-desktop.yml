@@ -52,7 +52,7 @@ jobs:
         Configuration: ${{ matrix.configuration }}
     # Publish Artifacts 
     - name: 'Publish Artifacts'   
-      uses: actions/upload-artifact@v7.0.1
+      uses: actions/upload-artifact@v7.0.2
       with:
         name: artifactory_${{ matrix.configuration }}
         path: ./artifacts/nuget
@@ -67,7 +67,7 @@ jobs:
       id-token: write
     steps:
       - name: 'Download Artifact'
-        uses: actions/download-artifact@v8.0.1
+        uses: actions/download-artifact@v8.0.2
         with:
           name: artifactory_Release
       - name: 'NuGet login (OIDC)'
